@@ -1,0 +1,48 @@
+<html>
+<head><title>mca</title></head>
+<script type="text/javascript">
+
+function val()
+{
+	var u = document.getElementById("e1").checked;
+	var p = document.getElementById("e2").checked;
+	var d = document.getElementById("e3").checked;
+	
+	if(u==false && p==false && d==false)
+	{
+		alert("select the educ");
+	}
+	var text = "";
+	if(u==true || p==true || d==true)
+	{
+		if(u==true)
+			text+=" "+document.getElementById("e1").value;
+		if(p==true)
+			text+=" "+document.getElementById("e2").value;
+		if(d==true)
+			text+=" "+document.getElementById("e3").value;
+	}
+	document.raj.temp.value=text;
+		
+}	
+</script>
+<body bgcolor="plum">
+<form name="raj" action="ins.php" method="post" onsubmit="return val();">
+<table border="1" cellpadding="10" cellspacing="5">
+<tr><td>id</td><td><input type="text" name="pid" id="id" autocomplete="off"></td></tr>
+<tr><td>gender</td><td><input type="radio" name="sex" id="g1" value="male">male
+<input type="radio" name="sex" id="g2" value="female">female</td></tr>
+<tr><td>educ</td><td><input type="checkbox" name="edu" id="e1" value="ug">ug
+<input type="checkbox" name="edu" id="e2" value="pg">pg
+<input type="checkbox" name="edu" id="e3" value="doc">doc</td>
+<tr><td>number</td><td>
+<select name="sel">
+<option value="select yours">select yours</option>
+<option value="1">1</option>
+<option value="2">2</option></td></tr>
+</table><br><br>
+<input type="submit" value="insert">
+<input type="hidden" name="temp">
+</form>
+</body>
+</html>
