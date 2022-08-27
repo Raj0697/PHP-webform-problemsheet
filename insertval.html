@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>mcc</title>
+</head>
+<script type="text/javascript">
+	function myfun()
+	{
+		var user=document.getElementById("userid").value;
+		user=user.trim();
+		var a=user.length;
+		if(a==0 || a!=6)
+		{
+			document.getElementById("msg").innerHTML="** please enter your id or id should contain 6 characters";
+			document.getElementById("userid").focus();
+			return false;
+		}
+		else
+		{
+			document.getElementById("msg").innerHTML="";
+		}
+		
+		var n=document.getElementById("na").value;
+		n=n.trim();
+		var b=n.length;
+		var correct=/^[ A-Za-z]+$/;
+		if(b==0)
+		{
+			document.getElementById("msg2").innerHTML="** please enter your name";
+			document.getElementById("na").focus();
+			return false;
+		}
+		else if(n.match(correct))
+		{
+			document.getElementById("msg2").innerHTML="";
+		}
+		else{
+		document.getElementById("msg2").innerHTML="** only characters are allowed";
+		document.getElementById("na").focus();
+		return false;
+		}
+			
+		var m=document.getElementById("gen").checked;
+		var f=document.getElementById("genn").checked;
+		if(m==false && f==false)
+		{
+			document.getElementById("msg3").innerHTML=" * please select the gender";
+			return false;
+		}
+		else
+		{
+			document.getElementById("msg3").innerHTML="";
+		}
+		
+		var add=document.getElementById("area").value;
+		if(add=="")
+		{
+			document.getElementById("msg4").innerHTML="enter the address";
+			document.getElementById("area").focus();
+			return false;
+		}
+		else
+		{
+			document.getElementById("msg4").innerHTML="";
+		}
+		
+		var mar=document.getElementById("selection").value;
+		if(mar=="select yours")
+		{
+			document.getElementById("msg5").innerHTML="seect the marital status";
+			document.getElementById("selection").focus();
+			return false;
+		}
+		else
+		{
+			document.getElementById("msg5").innerHTML="";
+		}
+		
+		var edu=document.getElementById("u").checked;
+		var qua=document.getElementById("p").checked;
+		if(edu==false && qua==false)
+		{
+			document.getElementById("msg6").innerHTML="select the edu qual";
+			return false;
+		}
+		else
+		{
+			document.getElementById("msg6").innerHTML="";
+		}
+	}
+
+</script>
+<body bgcolor="#cococo">
+<form name="cus" action="insert.php" method="post" onsubmit="return myfun();">
+<fieldset>
+<legend>details</legend>
+<table border="10" bordercolor="black" cellpadding="10" cellspacing="5" >
+
+<tr>
+<th>1.</th>
+<td>id:</td>
+<td>
+<input type="text" name="i" id="userid" maxlength="6" />
+<span id="msg" style="color:red;"></span>
+</td>
+</tr>
+
+<tr>
+<th>2.</th>
+<td>name:</td>
+<td>
+<input type="text" id="na" name="n" maxlength="30" />
+<span id="msg2" style="color:blue;"></span>
+</td>
+</tr>
+
+<tr>
+<th>3.</th>
+<td>gender:</td>
+<td>
+<input type="radio" id="gen" name="sex" value="male"/>male
+<input type="radio" id="genn" name="sex" value="female"/>female
+<span id="msg3" style="color:green;"></span>
+</td>
+</tr>
+
+<tr>
+<th>4.</th>
+<td>address:</td>
+<td>
+<textarea rows="3" cols="30" id="area" name="addres" ></textarea>
+<span id="msg4" style="color:black;"></span>
+</td>
+</tr>
+
+<tr>
+<th>5.</th>
+<td>marital status</td>
+<td>
+<select name="marry" id="selection">
+<option value="select yours">select yours</option>
+<option value="single">single</option>
+<option value="married">married</option>
+<option value="divorsed">divorsed</option>
+<option value="widow">widow</option>
+</select>
+<span id="msg5" style="color:brown;"></span>
+</td>
+</tr>
+
+<tr>
+<th>6.</th>
+<td>qual</td>
+<td>
+<input type="checkbox" id="u" name="edu" value="ug"/>ug
+<input type="checkbox" id="p" name="edu" value="pg"/>pg
+<span id="msg6" style="color:red;"></span>
+</td>
+</tr>
+</fieldset>
+</table>
+<br/>
+
+<input type="submit" value="submit" name="submit"/>
+&ensp;&ensp;&ensp;
+<input type="reset" value="reset" name="reset" onclick="return confirm('r u sure')";/>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>form</title>
+</head>
+<body bgcolor="#555555">
+<center>
+<form name="web" method="post" action="newinsert.php">
+<fieldset style="border-color:red;">
+<legend style="font-family:arial;font-size:30px;"><h1>WELCOME TO REGISTRATION</h1></legend>
+<table style="border-color:red;" border="0" cellpadding="10" cellspacing="5" >
+<tr>
+<th><label style="font:normal 30px arial;">1.</th></label>
+<td><label style="font:normal 30px arial;">ID ::</label></td>
+<td><input type="text" name="cid" id="di" placeholder="Enter the id!" size="30"></td>
+</tr>
+
+<tr>
+<th><label style="font:normal 30px arial;">2.</th></label>
+<td><label style="font:normal 30px arial;">NAME ::</label></td>
+<td><input type="text" name="cna" id="na" placeholder="Enter the name!" size="30"></td>
+</tr>
+
+<tr>
+<th><label style="font:normal 30px arial;">3.</th></label>
+<td><label style="font:normal 30px arial;">SEX ::</label></td>
+<td><label style="font:normal 30px arial;"><input type="radio" name="gen" id="s1" value="MALE">MALE
+<input type="radio" name="gen" id="s2" value="FEMALE">FEMALE
+<input type="radio" name="gen" id="s3" value="TRANGENDER">TRANSGENDER</label>
+</td>
+</tr>
+
+<tr>
+<th><label style="font:normal 30px arial;">4.</th></label>
+<td><label style="font:normal 30px arial;">ADDRESS ::</label></td>
+<td><textarea rows="4" cols="30" name="area" id="ar" placeholder="Enter the address!"></textarea></td>
+</tr>
+
+<tr>
+<th><label style="font:normal 30px arial;">5.</th></label>
+<td><label style="font:normal 30px arial;">PRODUCTS ::</label></td>
+<td><select name="se" id="pro">
+<option value="select the products">select the products</option>
+<option value="mango">mango</option>
+<option value="grapes">grapes</option>
+<option value="rose">rose</option></label>
+</select>
+</td>
+</tr>
+
+<tr>
+<th><label style="font:normal 30px arial;">6.</th></label>
+<td><label style="font:normal 30px arial;">QUALIFICATION ::</label></td>
+<td><label style="font:normal 30px arial;"><input type="checkbox" id="u" name="edu" value="UG">UG
+<input type="checkbox" id="p" name="edu" value="PG">PG
+<input type="checkbox" id="d" name="edu" value="DOCTRATE">DOCTRATE
+</label>
+</td>
+</tr>
+
+</table>
+<br><br>
+<label style="font:normal 30px arial;">
+<input type="submit" value="INSERT" style="border:0;">&ensp;&ensp;&ensp;
+<a href="newdelete.html">DELETE</a>
+&ensp;&ensp;&ensp;
+<input type="button" value="UPDATE" style="border:none;">&ensp;&ensp;&ensp;
+<input type="button" value="RECORDS" style="border:none;">&ensp;&ensp;&ensp;
+<input type="RESET" value="CLEAR" style="border:none;">
+</label>
+</fieldset>
+</form>
+</center>
+</body>
+</html>

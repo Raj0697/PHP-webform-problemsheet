@@ -1,0 +1,188 @@
+<html>
+<head>
+<title>EB</title>
+</head>
+<script type="text/javascript">
+function validate()
+{
+	//id
+	var eid = document.getElementById("e1").value;
+	eid=eid.trim();
+	if(eid.length==0)
+	{
+		document.getElementById("m1").innerHTML= " *Enter id!!";
+		document.getElementById("e1").focus();
+		return false;
+	}
+	else if(isNaN(eid))
+	{
+		document.getElementById("m1").innerHTML= " *enter only digits";
+		document.getElementById("e1").focus();
+		return false;
+	}
+	else
+	{
+		document.getElementById("m1").innerHTML= " ";
+	}
+
+	//name
+	var ename = document.getElementById("e2").value;
+	ename=ename.trim();
+	var correct = /^[ A-Za-z]+$/;
+	if(ename=="")
+	{
+		document.getElementById("m2").innerHTML="* Enter the name !!";
+		document.getElementById("e2").focus();
+		return false;
+	}
+	else if(ename.match(correct))
+	{
+		document.getElementById("m2").innerHTML=" ";
+	}	
+	else
+	{
+		document.getElementById("m2").innerHTML=" only charcters are allowed!";
+		document.getElementById("e2").focus();
+		return false;
+	}
+	//address
+	var add=document.getElementById("e3").value;
+	add=add.trim();
+	if(add=="")
+	{
+		document.getElementById("m3").innerHTML=" *enter the address";
+		document.getElementById("e3").focus();
+		return false;
+	}
+	else
+	{
+		document.getElementById("m3").innerHTML="";
+	}
+	//gender
+	var m=document.getElementById("s1").checked;
+	var f=document.getElementById("s2").checked;
+	if(m==false && f==false)
+	{
+		document.getElementById("m4").innerHTML="select the gender";
+		return false;
+	}
+	else
+	{
+		document.getElementById("m4").innerHTML="";
+	}
+	//qual
+	var ed1=document.getElementById("q1").checked;
+	var ed2=document.getElementById("q2").checked;
+	var ed3=document.getElementById("q3").checked;
+	var text = " ";
+	if(ed1==false && ed2==false && ed3==false)
+	{
+		document.getElementById("m5").innerHTML="select the qualificstion";
+		return false;
+	}
+	else
+	{
+		document.getElementById("m5").innerHTML="";
+	}
+	
+	if(ed1==true || ed2==true || ed3==true)
+	{
+		if(ed1==true)
+		text+=" "+document.getElementById("q1").value;
+		if(ed2==true)
+		text+=" "+document.getElementById("q2").value;
+		if(ed3==true)
+		text+=" "+document.getElementById("q3").value;
+		alert(text);
+		document.web.temp.value=text;
+	}
+	//country
+	var se=document.getElementById("e4");
+	var i =se.selectedIndex;
+	if(i==0)
+	{
+		document.getElementById("m6").innerHTML="select the country";
+		return false;
+	}
+	else
+	{
+		document.getElementById("m6").innerHTML="";
+	}
+}
+
+</script>
+<body bgcolor="#cococo">
+<center>
+<fieldset>
+<legend>
+<h1 style="font:normal 35px arial;background-color:blue;color:white;">WELCOME TO ELECTRICITY BOARD</h1>
+</legend>
+<form name="web" method="post" action="ebins.php" onsubmit="return validate();" >
+<table border="8" cellpadding="10" cellspacing="5">
+<tr>
+<th>1.</th>
+<td>id</td>
+<td><input type="text" name="did" id="e1" size="20" placeholder="Enter the ID!">
+<span id="m1" style="color:red;"></td>
+</tr>
+
+<tr><th>2.</th>
+<td>name</td>
+<td><input type="text" name="na" id="e2" size="20" placeholder="Enter the name!"><span id="m2" style="color:red;"></td>
+</tr>
+
+<tr><th>3.</th>
+<td>address</td>
+<td><textarea rows="3" cols="30" name="area" id="e3" placeholder="Enter the address!" size="20"></textarea><span id="m3" style="color:red;"></td>
+</tr>
+
+<tr><th>4.</th>
+<td>gender</td>
+<td><input type="radio" name="sex" id="s1" value="male">male
+<input type="radio" name="sex" id="s2" value="female">female<span id="m4" style="color:red;"></td>
+</tr>
+
+<tr><th>5.</th>
+<td>qual</td>
+<td><input type="checkbox" name="edu" id="q1" value="ug">ug
+<input type="checkbox" name="edu" id="q2" value="pg">pg
+<input type="checkbox" name="edu" id="q3" value="phd">phd<span id="m5" style="color:red;"></td>
+</tr>
+
+<tr><th>6.</th>
+<td>country</td>
+<td><select name="selection" id="e4">
+<option value="-select yours-">-select yours-</option>
+<option value="india">india</option>
+<option value="usa">usa</option>
+<option value="uk">uk</option></select><span id="m6" style="color:red;"></td>
+</tr>
+
+</table>
+<br><br>
+<input type="submit" value="insert" style="border:none;">&ensp;&ensp;
+<input type="reset" value="clear" style="border:none;">&ensp;&ensp;
+<input type="hidden" name="temp">
+<a href="ebdelete.html">delete</a>&ensp;&ensp;
+<a href="view.html">view</a>
+<form>
+
+</fieldset>
+<center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
